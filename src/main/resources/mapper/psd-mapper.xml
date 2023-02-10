@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hrdkorea.psd.PsdDao">
+
+<insert id="formInsert" parameterType="com.hrdkorea.psd.PsdVO">
+	insert into psd0131 (idx, sname, img, today)
+	values(psd0131_seq.nextval,#{sname},#{img},#{today})
+</insert>
+
+<select id="formList" resultType="com.hrdkorea.psd.PsdVO">
+	select idx, sname, img, today from psd0131
+</select>
+
+<select id="content" resultType="com.hrdkorea.psd.PsdVO">
+	select idx, sname, img, today from psd0131 where idx=#{idx}
+</select>
+
+<update id="formUpdate1" parameterType="com.hrdkorea.psd.PsdVO">
+	update psd0131 set sname=#{sname}, img=#{img} where idx=#{idx}
+</update>
+
+<update id="formUpdate2" parameterType="com.hrdkorea.psd.PsdVO">
+	update psd0131 set sname=#{sname} where idx=#{idx}
+</update>
+
+<delete id="formDelete" parameterType="com.hrdkorea.psd.PsdVO">
+	delete from psd0131 where idx=#{idx}
+</delete>
+
+</mapper>
+

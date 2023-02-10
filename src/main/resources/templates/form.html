@@ -1,0 +1,21 @@
+<html xmlns:th="http//www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+<div align="center">
+<br>
+<h2> 자료실 폼만들기 </h2> <a href=index.html> 처음으로 </a><br><br>
+<form action=formOK.do method=post enctype="multipart/form-data">
+	<table border=2 style="border-collapse:collapse">
+	<tr> <td> 이름 </td><td> <input type=text name=sname> </td> </tr>
+	<tr> <td> 사진 </td><td> <input type=file name=updateFile> </td> </tr>
+	<tr> 
+		<td colspan=2 align="center">  
+			<input type=submit value="저장하기">
+		</td> </tr>
+	</table>
+</form>
+</div>
+</body>
+</html>

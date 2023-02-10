@@ -1,0 +1,23 @@
+<html xmlns:th="http//www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+<div align="center">
+<br>
+<h2> 자료실 목록 </h2> <a href=index.html> 처음으로 </a><br><br>
+<br>
+	<table th:align="center" border="2" width="600" style="border-collapse:collapse;
+		   text-align:center">
+		<tr> <th width="80"> 번호 </th><th> 이름 </th><th> 파일명 </th><th> 날짜 </th><th> 사진 </th> </tr> 
+		<tr th:each="m : ${li}">
+			<td><a th:href="@{/content.do(idx=${m.idx})}"  th:text="${m.idx}"></a></td>
+			<td th:text="${m.sname}"></td>
+			<td th:text="${m.img}"></td>
+			<td th:text="${#dates.format(m.today, 'YYYY/MM/DD')}"></td>
+			<td><img th:src="@{./img/}+${m.img}" width=50 height=50 /></td>
+		</tr>
+	</table>
+</div>
+</body>
+</html>
